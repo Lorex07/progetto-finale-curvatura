@@ -1,12 +1,9 @@
-/**
 
-  Duplicate this sketch to start your project 🧪
-  More info: https://dev.codemotionkids.com/libraries/diorama/docs/
+function preload(){
+  oldTree = loadAsset("old_tree.glb")
+  drevo.glb = loadAsset("derevo.glb")
+}
   
-  Creative Commons BY-SA
-
-**/
-
 function setup() {
   createCanvas3D(windowWidth, windowHeight);
   background3D("#99FFFF");
@@ -16,7 +13,7 @@ function setup() {
   
 //ALBERO
 var albero = beginGroup();
-diffuse("#499200");
+diffuse("#83E2FA");
 capsule(0, 3, 0, 2);
 align (TOP);
 diffuse("#994C00");
@@ -46,6 +43,8 @@ diffuse("#994C00");
     var y = 0;
     var z= random(-lato/2, lato/2);
     clone(cespuglio, x, y, z);
+    clone(oldTree, i, h, g);
+    clone(drevo.glb, a, b, c);
   }
   align(BOTTOM)
   diffuse("#458801");
@@ -54,16 +53,4 @@ diffuse("#994C00");
   pushFX(BLOOM, 0.13);
   
 
-}
-function draw(){
-  
-  
-  
-  
-}
-
-
-function draw() {
-  // 🔍 Never create objects here, but don't forget to have it in your code:
-  // leave empty for the moment
 }
